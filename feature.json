@@ -1,0 +1,711 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Site",
+        "id":"GHD",
+        "name":"GH - Detroit Site - Audit Trail",
+        "description":"",
+        "level":"n/a",
+        "parentId":"n/a",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":-1000,
+        "maxHeight":1000
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0501630902290,42.3359866960666],[-83.0494040250778,42.3349655916104],[-83.0486530065536,42.3352986915851],[-83.0482667684555,42.3357923900881],[-83.0496078729629,42.3363614273296],[-83.0496722459793,42.3362999636247],[-83.0500262975692,42.3360441946594],[-83.0501630902290,42.3359866960666]]]
+        }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"POI",
+        "id":"GHDO",
+        "name":"GH - Detroit Building",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHD",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":-1000,
+        "maxHeight":1000
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0490227822475,42.3353763921269],[-83.0493443880654,42.3352413529000],[-83.0494539998389,42.3353840000437],[-83.0491323940210,42.3355190392706],[-83.0491192996665,42.3355019984711],[-83.0491064173357,42.3355074076393],[-83.0490845078313,42.3354788949338],[-83.0490973901621,42.3354734857655],[-83.0490227822475,42.3353763921269]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Floor",        "id":"GHDO_FL01",        "name":"Floor 1",        "description":"",        "level":0,        "parentId":"GHDO",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":-12,        "maxHeight":-10        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0490227822475,42.3353763921269],[-83.0493443880654,42.3352413529000],[-83.0494539998389,42.3353840000437],[-83.0491323940210,42.3355190392706],[-83.0491192996665,42.3355019984711],[-83.0491064173357,42.3355074076393],[-83.0490845078313,42.3354788949338],[-83.0490973901621,42.3354734857655],[-83.0490227822475,42.3353763921269]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Floor",
+        "id":"GHDO_FL02",
+        "name":"Floor 2",
+        "description":"",
+        "level":1,
+        "parentId":"GHDO",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":-10,
+        "maxHeight":-8
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0490227822475,42.3353763921269],[-83.0493443880654,42.3352413529000],[-83.0494539998389,42.3353840000437],[-83.0491323940210,42.3355190392706],[-83.0491192996665,42.3355019984711],[-83.0491064173357,42.3355074076393],[-83.0490845078313,42.3354788949338],[-83.0490973901621,42.3354734857655],[-83.0490227822475,42.3353763921269]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Floor",        "id":"GHDO_FL03",        "name":"Floor 3",        "description":"",        "level":2,        "parentId":"GHDO",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":0,        "maxHeight":100        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0490227822475,42.3353763921269],[-83.0493443880654,42.3352413529000],[-83.0494539998389,42.3353840000437],[-83.0491323940210,42.3355190392706],[-83.0491192996665,42.3355019984711],[-83.0491064173357,42.3355074076393],[-83.0490845078313,42.3354788949338],[-83.0490973901621,42.3354734857655],[-83.0490227822475,42.3353763921269]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Floor",
+        "id":"GHDO_FL04",
+        "name":"Floor 4",
+        "description":"",
+        "level":3,
+        "parentId":"GHDO",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":100,
+        "maxHeight":101
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0490227822475,42.3353763921269],[-83.0493443880654,42.3352413529000],[-83.0494539998389,42.3353840000437],[-83.0491323940210,42.3355190392706],[-83.0491192996665,42.3355019984711],[-83.0491064173357,42.3355074076393],[-83.0490845078313,42.3354788949338],[-83.0490973901621,42.3354734857655],[-83.0490227822475,42.3353763921269]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Floor",        "id":"GHDO_FL05",        "name":"Floor 5",        "description":"",        "level":4,        "parentId":"GHDO",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":101,        "maxHeight":102        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0490227822475,42.3353763921269],[-83.0493443880654,42.3352413529000],[-83.0494539998389,42.3353840000437],[-83.0491323940210,42.3355190392706],[-83.0491192996665,42.3355019984711],[-83.0491064173357,42.3355074076393],[-83.0490845078313,42.3354788949338],[-83.0490973901621,42.3354734857655],[-83.0490227822475,42.3353763921269]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Room",
+        "id":"GHDO_FL03_RM01",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0490294372367,42.3353786340989],[-83.0490329247116,42.3353831726472],[-83.0490318700615,42.3353836154848],[-83.0490595137275,42.3354195905436],[-83.0490605683776,42.3354191477060],[-83.0490674151738,42.3354280580255],[-83.0490663605238,42.3354285008631],[-83.0490939185222,42.3354643644354],[-83.0490949731723,42.3354639215979],[-83.0491018198815,42.3354728318042],[-83.0491007652314,42.3354732746417],[-83.0491180532964,42.3354957730742],[-83.0491295796489,42.3354909332683],[-83.0491300288819,42.3354915178935],[-83.0491444931109,42.3354854445012],[-83.0491440438779,42.3354848598760],[-83.0491729349379,42.3354727287944],[-83.0491767219883,42.3354776572059],[-83.0491960454847,42.3354695434534],[-83.0491863102779,42.3354568741990],[-83.0492449963835,42.3354322324609],[-83.0492475853054,42.3354356016457],[-83.0492583206321,42.3354310939840],[-83.0492557317102,42.3354277247993],[-83.0493069220006,42.3354062304828],[-83.0493128701570,42.3354139713257],[-83.0493444731738,42.3354007015192],[-83.0493514850072,42.3353945899744],[-83.0493760879776,42.3353732477498],[-83.0493832992492,42.3353777696680],[-83.0494023215702,42.3353697823762],[-83.0493976320588,42.3353492860418],[-83.0494147332956,42.3353421053950],[-83.0494091061317,42.3353347822871],[-83.0494098970041,42.3353344502073],[-83.0493791296025,42.3352944099651],[-83.0493783387302,42.3352947420449],[-83.0493730111420,42.3352878088003],[-83.0493740656386,42.3352873660272],[-83.0493436189683,42.3352477431801],[-83.0492119770275,42.3353030183801],[-83.0492113780503,42.3353022388801],[-83.0491662272050,42.3353211972910],[-83.0491893313557,42.3353512646916],[-83.0491512017935,42.3353721853926],[-83.0491310418342,42.3353832467619],[-83.0490925963696,42.3353521141791],[-83.0490294372367,42.3353786340989]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Room",        "id":"GHDO_FL03_RM02",        "name":"Closed",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0491974976370,42.3354691638863],[-83.0491885327425,42.3354574971051],[-83.0491949739081,42.3354547925209],[-83.0492039388025,42.3354664593021],[-83.0491974976370,42.3354691638863]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Room",
+        "id":"GHDO_FL03_RM03",
+        "name":"Server_Room",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0491850932165,42.3354885513986],[-83.0491776259390,42.3354788335940],[-83.0492047090277,42.3354674616624],[-83.0492121763052,42.3354771794670],[-83.0491850932165,42.3354885513986]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Room",        "id":"GHDO_FL03_RM04",        "name":"Phone_Room_1",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0494038865291,42.3353693554427],[-83.0493994563696,42.3353500392649],[-83.0494166704130,42.3353428112516],[-83.0494289731250,42.3353588218194],[-83.0494038865291,42.3353693554427]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Room",
+        "id":"GHDO_FL03_RM05",
+        "name":"Private_Huddle",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0493762599956,42.3353748329214],[-83.0493855245189,42.3353806656011],[-83.0494003947361,42.3354000174822],[-83.0493581318012,42.3354177632870],[-83.0493456150940,42.3354014742291],[-83.0493762599956,42.3353748329214]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Room",        "id":"GHDO_FL03_RM06",        "name":"Board_Room",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0491196480379,42.3353407554406],[-83.0491649087779,42.3353217508860],[-83.0491873477853,42.3353509526790],[-83.0491503150653,42.3353712746598],[-83.0491196480379,42.3353407554406]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Room",
+        "id":"GHDO_FL03_RM07",
+        "name":"Care_Room",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0490951802648,42.3353525481600],[-83.0491193910767,42.3353423822701],[-83.0491342495393,42.3353571695474],[-83.0491140405632,42.3353678157189],[-83.0490951802648,42.3353525481600]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Room",        "id":"GHDO_FL03_RM08",        "name":"Phone_Room_2",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0491351530507,42.3353580699364],[-83.0491490972062,42.3353719427760],[-83.0491312397080,42.3353817427480],[-83.0491150687477,42.3353686514707],[-83.0491351530507,42.3353580699364]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Restroom",
+        "id":"GHDO_FL03_WC01",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0492620104641,42.3354562545773],[-83.0492591101388,42.3354574723963],[-83.0492583398262,42.3354564699229],[-83.0492593944759,42.3354560270855],[-83.0492586242506,42.3354550247256],[-83.0492409205102,42.3354624583579],[-83.0492416907356,42.3354634607179],[-83.0492427453853,42.3354630178804],[-83.0492435156979,42.3354640203538],[-83.0492408412925,42.3354651433113],[-83.0492307850929,42.3354520563216],[-83.0492294668189,42.3354526098524],[-83.0492395230185,42.3354656968420],[-83.0492135322838,42.3354766101045],[-83.0491963298864,42.3354542231585],[-83.0492448080667,42.3354338676312],[-83.0492620104641,42.3354562545773]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Restroom",        "id":"GHDO_FL03_WC02",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"yes",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0491588765622,42.3354995595227],[-83.0491476008174,42.3354848854349],[-83.0491724991981,42.3354744308415],[-83.0491837749428,42.3354891049292],[-83.0491588765622,42.3354995595227]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Restroom",
+        "id":"GHDO_FL03_WC03",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"yes",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0492576903975,42.3354284584629],[-83.0493062062824,42.3354080871039],[-83.0493234086798,42.3354304740499],[-83.0492974180983,42.3354413872481],[-83.0492873618988,42.3354283002585],[-83.0492860057673,42.3354288696852],[-83.0492960619668,42.3354419566748],[-83.0492934254189,42.3354430637362],[-83.0492926551064,42.3354420612629],[-83.0492936718986,42.3354416343215],[-83.0492929016732,42.3354406319615],[-83.0492752356369,42.3354480497623],[-83.0492760058622,42.3354490521223],[-83.0492770229611,42.3354486250521],[-83.0492777932737,42.3354496275255],[-83.0492748927949,42.3354508454090],[-83.0492576903975,42.3354284584629]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Elevator",        "id":"GHDO_FL03_EL01",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"yes",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0491344058374,42.3355075879158],[-83.0491254623599,42.3354959490062],[-83.0491447104473,42.3354878669172],[-83.0491536539249,42.3354995058268],[-83.0491344058374,42.3355075879158]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Elevator",
+        "id":"GHDO_FL03_EL02",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"both",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0493302389638,42.3354256173480],[-83.0493212953993,42.3354139783251],[-83.0493427280420,42.3354049789621],[-83.0493516716065,42.3354166179850],[-83.0493302389638,42.3354256173480]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Stairs",        "id":"GHDO_FL03_ST01",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"both",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0494024458655,42.3354004174151],[-83.0493855002100,42.3353783645892],[-83.0494308144411,42.3353593375742],[-83.0494477600966,42.3353813904001],[-83.0494024458655,42.3354004174151]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Stairs",
+        "id":"GHDO_FL03_ST02",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"both",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0491066827130,42.3355067805579],[-83.0490853722726,42.3354790474654],[-83.0490971624025,42.3354740969019],[-83.0491184728429,42.3355018299944],[-83.0491066827130,42.3355067805579]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Wall",        "id":"GHDO_FL03_WL01",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"both",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0493500098557,42.3353660872364],[-83.0493463725496,42.3353613536999],[-83.0493528135617,42.3353586491802],[-83.0493564508677,42.3353633827166],[-83.0493500098557,42.3353660872364]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Wall",
+        "id":"GHDO_FL03_WL02",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0493156051480,42.3353213134577],[-83.0493119463378,42.3353165519362],[-83.0493183873499,42.3353138474165],[-83.0493220461601,42.3353186089380],[-83.0493156051480,42.3353213134577]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Wall",        "id":"GHDO_FL03_WL03",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0492896192497,42.3353385222111],[-83.0493420976296,42.3353715456929],[-83.0493403081624,42.3353731071914],[-83.0492878299562,42.3353400839362],[-83.0492896192497,42.3353385222111]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Wall",
+        "id":"GHDO_FL03_WL04",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0492533027938,42.3353474736243],[-83.0492496439836,42.3353427121027],[-83.0492560853024,42.3353400074542],[-83.0492597441125,42.3353447689757],[-83.0492533027938,42.3353474736243]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Wall",        "id":"GHDO_FL03_WL05",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0492546467819,42.3353689326387],[-83.0492584463331,42.3353656429786],[-83.0492640544398,42.3353691808002],[-83.0492602548014,42.3353724703469],[-83.0492848799651,42.3353879841198],[-83.0492886581861,42.3353846667014],[-83.0492943254139,42.3353882165628],[-83.0493141210528,42.3353709920649],[-83.0493162550620,42.3353723424962],[-83.0492769332180,42.3354064941874],[-83.0492747992088,42.3354051437560],[-83.0492381701482,42.3354097331660],[-83.0492091313879,42.3354349635316],[-83.0491676944587,42.3354400986419],[-83.0491328576095,42.3354132298580],[-83.0491433876754,42.3354057699162],[-83.0491815051838,42.3354351682113],[-83.0492068634583,42.3354320120815],[-83.0492242500717,42.3354169038444],[-83.0492221875650,42.3354135715236],[-83.0492271220878,42.3354114995644],[-83.0492091066312,42.3353880545152],[-83.0492201055821,42.3353834361602],[-83.0492208758947,42.3353844386336],[-83.0492192561390,42.3353851187536],[-83.0492359021319,42.3354067816030],[-83.0492767995107,42.3354016521577],[-83.0492883438937,42.3353916488576],[-83.0492544754045,42.3353703305187],[-83.0492305187141,42.3353803897054],[-83.0492297484016,42.3353793872320],[-83.0492546467819,42.3353689326387]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Wall",
+        "id":"GHDO_FL03_WL06",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0491540952952,42.3354498967056],[-83.0491562076684,42.3354512195074],[-83.0491286295805,42.3354751735902],[-83.0491264957244,42.3354738230946],[-83.0491540952952,42.3354498967056]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Wall",        "id":"GHDO_FL03_WL07",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0491347478213,42.3353954123081],[-83.0491332286133,42.3353934352331],[-83.0491348483689,42.3353927551131],[-83.0491363675770,42.3353947321880],[-83.0491347478213,42.3353954123081]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Wall",
+        "id":"GHDO_FL03_WL08",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0491252662878,42.3353994117964],[-83.0491237472540,42.3353974349482],[-83.0491253668565,42.3353967548925],[-83.0491268858903,42.3353987317407],[-83.0491252662878,42.3353994117964]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Wall",        "id":"GHDO_FL03_WL09",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0491297003387,42.3353975316980],[-83.0491281811306,42.3353955546231],[-83.0491304412477,42.3353946056214],[-83.0491319604558,42.3353965826964],[-83.0491297003387,42.3353975316980]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Wall",
+        "id":"GHDO_FL03_WL10",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0491641050464,42.3354423054767],[-83.0491625859253,42.3354403285150],[-83.0491648868122,42.3354393623944],[-83.0491664059333,42.3354413393561],[-83.0491641050464,42.3354423054767]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Wall",        "id":"GHDO_FL03_WL11",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0491261160231,42.3354609452615],[-83.0491245969021,42.3354589682998],[-83.0491270076836,42.3354579560355],[-83.0491285268047,42.3354599329972],[-83.0491261160231,42.3354609452615]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Wall",
+        "id":"GHDO_FL03_WL12",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-83.0491920025400,42.3353713715957],[-83.0491904833320,42.3353693945208],[-83.0491927434491,42.3353684455191],[-83.0491942626571,42.3353704225940],[-83.0491920025400,42.3353713715957]]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Wall",        "id":"GHDO_FL03_WL13",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "Polygon",        "coordinates": [[[-83.0490886087357,42.3354121338313],[-83.0490870682849,42.3354101291115],[-83.0490894790665,42.3354091168472],[-83.0490910195172,42.3354111215671],[-83.0490886087357,42.3354121338313]]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Door",
+        "id":"GHDO_FL03_DR01",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "LineString",
+        "coordinates": [[-83.0491342536488,42.3354911158795],[-83.0491438964682,42.3354870669513]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Door",        "id":"GHDO_FL03_DR02",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "LineString",        "coordinates": [[-83.0491608621748,42.3354786725890],[-83.0491705049942,42.3354746236608]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Door",
+        "id":"GHDO_FL03_DR03",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "LineString",
+        "coordinates": [[-83.0491788605383,42.3354776522372],[-83.0491949446765,42.3354708986604]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Door",        "id":"GHDO_FL03_DR04",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "LineString",        "coordinates": [[-83.0491957900392,42.3354680763325],[-83.0491884725931,42.3354585535161]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Door",
+        "id":"GHDO_FL03_DR05",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "LineString",
+        "coordinates": [[-83.0492294312802,42.3354396612377],[-83.0492390740993,42.3354356123096]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Door",        "id":"GHDO_FL03_DR06",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "LineString",        "coordinates": [[-83.0492621266511,42.3354259327622],[-83.0492717697769,42.3354218837053]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Door",
+        "id":"GHDO_FL03_DR07",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "LineString",
+        "coordinates": [[-83.0493303898568,42.3354085023986],[-83.0493416524319,42.3354037733503]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Door",        "id":"GHDO_FL03_DR08",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "LineString",        "coordinates": [[-83.0493674123033,42.3353819269216],[-83.0493746074518,42.3353757120299]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Door",
+        "id":"GHDO_FL03_DR09",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "LineString",
+        "coordinates": [[-83.0493867456049,42.3353771972815],[-83.0493980081800,42.3353724682333]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Door",        "id":"GHDO_FL03_DR10",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "LineString",        "coordinates": [[-83.0494023893888,42.3353663016821],[-83.0494005438277,42.3353582209134]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Door",
+        "id":"GHDO_FL03_DR11",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "LineString",
+        "coordinates": [[-83.0492204907383,42.3353839373968],[-83.0492301335578,42.3353798884686]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Door",        "id":"GHDO_FL03_DR12",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "LineString",        "coordinates": [[-83.0491520533161,42.3353709922527],[-83.0491609893515,42.3353661377603]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Door",
+        "id":"GHDO_FL03_DR13",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "LineString",
+        "coordinates": [[-83.0491232489621,42.3353761180540],[-83.0491157140497,42.3353700355170]]
+        }
+    },
+    {    "type": "Feature",    "properties": {        "category":"Door",        "id":"GHDO_FL03_DR14",        "name":"0",        "description":"",        "level":"n/a",        "parentId":"GHDO_FL03",        "active":"yes",        "blackout":"no",        "stairDirection":"n/a",        "minHeight":"n/a",        "maxHeight":"n/a"        },        "geometry": {        "type": "LineString",        "coordinates": [[-83.0491121974405,42.3353672097608],[-83.0491047067505,42.3353611670989]]        }    },
+
+    {
+    "type": "Feature",
+    "properties": {
+        "category":"Door",
+        "id":"GHDO_FL03_DR15",
+        "name":"0",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHDO_FL03",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"
+        },
+        "geometry": {
+        "type": "LineString",
+        "coordinates": [[-83.0491145962604,42.3354940297347],[-83.0491042405724,42.3354805529952]]
+        }
+    },
+        {
+      "type": "Feature",
+      "properties": {
+        "category":"AuditTrail",
+        "id":"AD_1",
+        "name":"Audit Trail 1",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHD",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"      
+    },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.049310147762,
+            42.3353348764464
+          ],
+          [
+            -83.0492223054170,
+            42.33537006992164
+          ],
+          [
+            -83.0491438508033,
+            42.33540278496547
+          ],
+          [
+            -83.049113005399,
+            42.33539336700004
+          ],
+          [
+            -83.0491726845502,
+            42.33540625474183
+          ],
+          [
+            -83.0491679906845,
+            42.3353755224301
+          ],
+          [
+            -83.0492122471332,
+            42.33539187995274
+          ],
+          [
+            -83.049210235476,
+            42.33535222534512
+          ],
+          [
+            -83.0492471158504,
+            42.33537205265205
+          ],
+          [
+            -83.0492383986711,
+            42.3353477642002
+          ],
+          [
+            -83.0492719262838,
+            42.3353601562686
+          ],
+          [
+            -83.0492645502090,
+            42.33533041530028
+          ],
+          [
+            -83.0493061244487,
+            42.3353497469313
+          ],
+          [
+            -83.0492927134036,
+            42.33532000595802
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "category":"AuditTrail",
+        "id":"AD_2",
+        "name":"Audit Trail 2",
+        "description":"",
+        "level":"n/a",
+        "parentId":"GHD",
+        "active":"yes",
+        "blackout":"no",
+        "stairDirection":"n/a",
+        "minHeight":"n/a",
+        "maxHeight":"n/a"   
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.0492920428514,
+            42.3353874188106
+          ],
+          [
+            -83.0491773784160,
+            42.3354364913564
+          ],
+          [
+            -83.0492042005062,
+            42.3354677193201
+          ],
+          [
+            -83.0493470281362,
+            42.3354156727053
+          ],
+          [
+            -83.0492679029703,
+            42.33541616838757
+          ],
+          [
+            -83.0492638796567,
+            42.3354647452290
+          ],
+          [
+            -83.0492571741342,
+            42.3353705656042
+          ],
+          [
+            -83.0493644624948,
+            42.3353844447157
+          ],
+          [
+            -83.0493597686290,
+            42.33538345335071
+          ],
+          [
+            -83.0493704974651,
+            42.3353670958259
+          ]
+        ]
+      }
+    }
+    ]
+}
