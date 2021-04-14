@@ -22,9 +22,9 @@ class GhApi:
     def generate_word(self, number):
         return RandomWord(max_word_size=number).generate()
 
-    def rnd_uuid(self):
-        self.guid_list.append(uuid.uuid4())
-        return self.guid_list
+    def rnd_uuid(self, guid_count):
+        for i in range(guid_count):
+            self.guid_list.append(uuid.uuid4())
 
     def login_to_scc(self):
         url = f"{self.scc_url}/oauth2/token"
@@ -72,13 +72,14 @@ class GhApi:
             print("The feature not is created")
         return response.text
 
-    def create_device(self, token):
+    def create_device(self, token, guid):
         url = f"{self.base_scc_url}/devices"
         headers = {
             "Authorization": f"{token}",
             "Content-Type": "application/json"
         }
-        response = requests.post(url, headers=headers, data=self.build_device_json("Communicator Hat"))
+        response = requests.post(url, headers=headers,
+                                 data=self.build_device_json(device_type="Communicator Hat", guid=guid))
 
         if response.ok:
             print("The device is created")
@@ -86,10 +87,16 @@ class GhApi:
             print("The device not is created")
         return response.text
 
-    def build_device_json(self, device_type):
+    def generate_devices(self, token, guid_count):
+        for count in range(guid_count):
+            self.rnd_uuid(guid_count=guid_count)
+            self.create_device(token=token, guid=self.guid_list[count])
+        print(f"Generated devices with {guid_count} count. Guids= {self.guid_list}")
+
+    def build_device_json(self, guid, device_type):
         return json.dumps({
             "name": f"{self.generate_word(10)}",
-            "guid": f"{self.guid}",
+            "guid": f"{guid}",
             "tagAddress": f"{random.randint(10, 99)}:"
                           f"{random.randint(10, 99)}:"
                           f"{random.randint(10, 99)}:"
@@ -140,12 +147,3 @@ class GhApi:
                 "sipPassword": "SQA_Dave"
             }
         })
-
-
-gh = GhApi()
-token2 = gh.login_to_scc()
-id_user = gh.create_user(token2)
-gh.create_device(token2)
-gh.assign_device_user(gh.guid, id_user)
-print(gh.create_feature(token2))
-
