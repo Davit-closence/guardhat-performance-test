@@ -56,7 +56,7 @@ class GhApi:
 
     def generate_user(self, token, user_count):
         for x in range(user_count):
-            self.user_id_list.append(gh.create_user(token))
+            self.user_id_list.append(self.create_user(token))
         print(f"Generated users with {user_count} count. User IDs= {self.user_id_list}")
 
     def create_feature(self, token):
