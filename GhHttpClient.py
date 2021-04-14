@@ -18,6 +18,7 @@ class GhApi:
     guid = "a0581ddb-ea05-4d45-9df3-6663806f4111"
 
     guid_list = []
+    user_id_list = []
 
     def generate_word(self, number):
         return RandomWord(max_word_size=number).generate()
@@ -51,8 +52,12 @@ class GhApi:
             print("The user is created")
         else:
             print("The user not is created")
-
         return response.text
+
+    def generate_user(self, token, user_count):
+        for x in range(user_count):
+            self.user_id_list.append(gh.create_user(token))
+        print(f"Generated users with {user_count} count. User IDs= {self.user_id_list}")
 
     def create_feature(self, token):
         url = f"{self.base_scc_url}/features"
