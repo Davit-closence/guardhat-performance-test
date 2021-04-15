@@ -128,6 +128,11 @@ class GhApi:
             print("The device not is assigned to user")
         return response.text
 
+    def assign_generated_device_user(self, number_for_assign):
+        for count in range(number_for_assign):
+            gh.assign_device_user(guid=gh.guid_list[count], user_id=gh.user_id_list[count])
+            print(f"Assign the device= {gh.guid_list[count]} to user= {gh.user_id_list[count]}")
+
     def build_user_json(self):
         return json.dumps({
             "userName": f"user_name_{self.generate_word(10)}",
@@ -152,3 +157,10 @@ class GhApi:
                 "sipPassword": "SQA_Dave"
             }
         })
+
+
+gh = GhApi()
+token2 = gh.login_to_scc()
+gh.generate_user(token2, 5)
+gh.generate_devices(token2, 5)
+gh.assign_generated_device_user(5)
