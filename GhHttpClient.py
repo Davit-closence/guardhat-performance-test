@@ -130,8 +130,8 @@ class GhApi:
 
     def assign_generated_device_user(self, number_for_assign):
         for count in range(number_for_assign):
-            gh.assign_device_user(guid=gh.guid_list[count], user_id=gh.user_id_list[count])
-            print(f"Assign the device= {gh.guid_list[count]} to user= {gh.user_id_list[count]}")
+            self.assign_device_user(guid=self.guid_list[count], user_id=self.user_id_list[count])
+            print(f"Assign the device= {self.guid_list[count]} to user= {self.user_id_list[count]}")
 
     def build_user_json(self):
         return json.dumps({
@@ -158,9 +158,8 @@ class GhApi:
             }
         })
 
-
-gh = GhApi()
-token2 = gh.login_to_scc()
-gh.generate_user(token2, 5)
-gh.generate_devices(token2, 5)
-gh.assign_generated_device_user(5)
+# gh = GhApi()
+# token2 = gh.login_to_scc()
+# gh.generate_user(token2, 5)
+# gh.generate_devices(token2, 5)
+# gh.assign_generated_device_user(5)

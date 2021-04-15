@@ -2,6 +2,7 @@ import paho.mqtt.client as mqtt
 import time
 from datetime import datetime
 import json
+import GhHttpClient
 
 
 class SendMsg:
@@ -118,9 +119,16 @@ class SendMsg:
             }
         )
 
-    def send_raw_at(self, user_id, x, y, z, ble=[]):
-        self.send(channel=f"guardhat/{self.guid}/inbound/raw",
+    def send_raw_at(self, guid, user_id, x, y, z, ble=[]):
+        self.send(channel=f"guardhat/{guid}/inbound/raw",
                   message=self.message(user_id=user_id, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
+
+    def generated_device_send_raw(self, number, user_id, x, y, z, ble=[]):
+        gh = GhHttpClient.GhApi()
+        for count in range(number):
+            self.send_raw_at(guid=gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
+            print(f"Sending raw message Guid= {gh.guid_list[count]}")
+
 
 # sender = SendMsg()
 # for x in range(39):
