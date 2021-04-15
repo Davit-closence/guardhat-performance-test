@@ -157,9 +157,3 @@ class GhApi:
                 "sipPassword": "SQA_Dave"
             }
         })
-
-# gh = GhApi()
-# token2 = gh.login_to_scc()
-# gh.generate_user(token2, 5)
-# gh.generate_devices(token2, 5)
-# gh.assign_generated_device_user(5)

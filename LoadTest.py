@@ -24,13 +24,13 @@ def time_delta(t1, t2):
     return int((t2 - t1) * 1000)
 
 
-count_of_users_devices = 20
+count_of_users_devices = 10
 
 
 @events.test_start.add_listener
 def on_test_start(**kwargs):
     guid = "a0581ddb-ea05-4d45-9df3-6663806f4111"
-    gh_http_client = GhHttpClient.GhApi
+    gh_http_client = GhHttpClient.GhApi()
     token = gh_http_client.login_to_scc()
     # id_user = gh_http_client.create_user(token)
     # gh_http_client.create_device(token)

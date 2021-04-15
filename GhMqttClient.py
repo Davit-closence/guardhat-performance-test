@@ -128,9 +128,3 @@ class SendMsg:
         for count in range(number):
             self.send_raw_at(guid=gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
             print(f"Sending raw message Guid= {gh.guid_list[count]}")
-
-
-# sender = SendMsg()
-# for x in range(39):
-#     sender.send_raw_at(-1, 0.0, 0.0, 0.0, [])
-#     time.sleep(1)
