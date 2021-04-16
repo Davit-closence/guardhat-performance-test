@@ -24,7 +24,7 @@ def time_delta(t1, t2):
     return int((t2 - t1) * 1000)
 
 
-count_of_users_devices = 10
+count_of_users_devices = 3
 
 
 @events.test_start.add_listener

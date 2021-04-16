@@ -23,9 +23,8 @@ class GhApi:
     def generate_word(self, number):
         return RandomWord(max_word_size=number).generate()
 
-    def rnd_uuid(self, guid_count):
-        for i in range(guid_count):
-            self.guid_list.append(uuid.uuid4())
+    def rnd_uuid(self):
+        self.guid_list.append(uuid.uuid4())
 
     def login_to_scc(self):
         url = f"{self.scc_url}/oauth2/token"
@@ -94,9 +93,8 @@ class GhApi:
 
     def generate_devices(self, token, guid_count):
         for count in range(guid_count):
-            self.rnd_uuid(guid_count=guid_count)
+            self.rnd_uuid()
             self.create_device(token=token, guid=self.guid_list[count])
-        print(f"Generated devices with {guid_count} count. Guids= {self.guid_list}")
 
     def build_device_json(self, guid, device_type):
         return json.dumps({
