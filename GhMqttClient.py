@@ -2,6 +2,9 @@ import paho.mqtt.client as mqtt
 import time
 from datetime import datetime
 import json
+
+from dateutil import tz
+
 import GhHttpClient
 
 
@@ -39,7 +42,7 @@ class SendMsg:
         return self.seq_num
 
     def timestamp(self):
-        return datetime.now().isoformat()
+        return datetime.now(tz.UTC).isoformat()
 
     def message(self, user_id,
                 timestamp,
