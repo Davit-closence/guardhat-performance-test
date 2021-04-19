@@ -41,25 +41,25 @@ class GhApi:
         return access_token
 
     # region users call
-    def create_user(self, token):
+    def create_user(self, token, feature):
         url = f"{self.base_scc_url}/users"
         headers = {
             "Authorization": f"{token}",
             "Content-Type": "application/json"
         }
-        response = requests.post(url, headers=headers, data=self.build_user_json())
+        response = requests.post(url, headers=headers, data=self.build_user_json(feature))
         if response.ok:
             print("The user is created")
         else:
             print("The user not is created")
         return response.text
 
-    def generate_user(self, token, user_count):
+    def generate_user(self, token, user_count, feature):
         for x in range(user_count):
-            self.user_id_list.append(self.create_user(token))
+            self.user_id_list.append(self.create_user(token, feature))
         print(f"Generated users with {user_count} count. User IDs= {self.user_id_list}")
 
-    def build_user_json(self):
+    def build_user_json(self, feature):
         return json.dumps({
             "userName": f"user_name_{self.generate_word(10)}",
             "sysUser": False,
@@ -74,7 +74,7 @@ class GhApi:
                 "phone": f"+23423{random.randint(1000, 5000)}",
                 "email": "test@email.test",
                 "companyId": None,
-                "site": None,
+                "site": feature,
                 "department": None
             },
             "userCredentials": {

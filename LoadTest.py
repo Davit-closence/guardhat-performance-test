@@ -31,7 +31,7 @@ count_of_users_devices = 3
 def on_test_start(**kwargs):
     gh_http_client = GhHttpClient.GhApi()
     token = gh_http_client.login_to_scc()
-    gh_http_client.generate_user(token=token, user_count=count_of_users_devices)
+    gh_http_client.generate_user(token=token, user_count=count_of_users_devices, feature=None)
     gh_http_client.generate_devices(token=token, guid_count=count_of_users_devices)
     gh_http_client.assign_generated_device_user(number_for_assign=count_of_users_devices)
     if not gh_http_client.get_feature_by_name(token):
