@@ -24,7 +24,7 @@ def time_delta(t1, t2):
     return int((t2 - t1) * 1000)
 
 
-count_of_users_devices = 3
+count_of_users_devices = 10
 
 
 @events.test_start.add_listener
@@ -36,6 +36,8 @@ def on_test_start(**kwargs):
         gh_http_client.create_feature(token)
     else:
         print("There is a feature.")
+
+    between(1, 2)
     gh_http_client.generate_user(token=token, user_count=count_of_users_devices,
                                  feature=gh_http_client.get_feature_by_name(token)[0])
     gh_http_client.generate_devices(token=token, guid_count=count_of_users_devices)
