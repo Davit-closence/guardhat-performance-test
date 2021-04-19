@@ -40,6 +40,7 @@ class GhApi:
         access_token = "Bearer " + response.json()["access_token"]
         return access_token
 
+    # region users call
     def create_user(self, token):
         url = f"{self.base_scc_url}/users"
         headers = {
@@ -58,6 +59,34 @@ class GhApi:
             self.user_id_list.append(self.create_user(token))
         print(f"Generated users with {user_count} count. User IDs= {self.user_id_list}")
 
+    def build_user_json(self):
+        return json.dumps({
+            "userName": f"user_name_{self.generate_word(10)}",
+            "sysUser": False,
+            "hatUser": True,
+            "enabled": True,
+            "userProfile": {
+                "firstName": f"first_name_{self.generate_word(10)}",
+                "lastName": f"last_name_{self.generate_word(10)}",
+                "employeeId": f"EMP-444455{random.randint(1000, 5000)}",
+                "userTitle": "SQA_Dave",
+                "fulltimeEmployee": True,
+                "phone": f"+23423{random.randint(1000, 5000)}",
+                "email": "test@email.test",
+                "companyId": None,
+                "site": None,
+                "department": None
+            },
+            "userCredentials": {
+                "enabled": True,
+                "sipUsername": f"sip_username_{self.generate_word(10)}",
+                "sipPassword": "SQA_Dave"
+            }
+        })
+
+    # endregion users call
+
+    # region features call
     def create_feature(self, token):
         url = f"{self.base_scc_url}/features"
         payload = {}
@@ -76,6 +105,24 @@ class GhApi:
             print("The feature not is created")
         return response.text
 
+    def get_feature_by_name(self, token):
+        url = f"{self.base_scc_url}/features"
+        payload = {}
+        headers = {
+            "Authorization": f"{token}",
+            "Content-Type": "application/json"
+        }
+        response = requests.get(url=url, headers=headers, data=payload)
+
+        if response.ok:
+            print("Successfully getting features")
+        else:
+            print("Can not getting features")
+        return response.text
+
+    # endregion features call
+
+    # region devices call
     def create_device(self, token, guid):
         url = f"{self.base_scc_url}/devices"
         headers = {
@@ -131,27 +178,10 @@ class GhApi:
             self.assign_device_user(guid=self.guid_list[count], user_id=self.user_id_list[count])
             print(f"Assign the device= {self.guid_list[count]} to user= {self.user_id_list[count]}")
 
-    def build_user_json(self):
-        return json.dumps({
-            "userName": f"user_name_{self.generate_word(10)}",
-            "sysUser": False,
-            "hatUser": True,
-            "enabled": True,
-            "userProfile": {
-                "firstName": f"first_name_{self.generate_word(10)}",
-                "lastName": f"last_name_{self.generate_word(10)}",
-                "employeeId": f"EMP-444455{random.randint(1000, 5000)}",
-                "userTitle": "SQA_Dave",
-                "fulltimeEmployee": True,
-                "phone": f"+23423{random.randint(1000, 5000)}",
-                "email": "test@email.test",
-                "companyId": None,
-                "site": None,
-                "department": None
-            },
-            "userCredentials": {
-                "enabled": True,
-                "sipUsername": f"sip_username_{self.generate_word(10)}",
-                "sipPassword": "SQA_Dave"
-            }
-        })
+    # endregion devices call
+
+
+gh = GhApi()
+tk = gh.login_to_scc()
+f = gh.get_feature_by_name(tk)
+print(f)

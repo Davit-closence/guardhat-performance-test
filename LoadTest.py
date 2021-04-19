@@ -39,7 +39,7 @@ def on_test_start(**kwargs):
     gh_http_client.generate_user(token=token, user_count=count_of_users_devices)
     gh_http_client.generate_devices(token=token, guid_count=count_of_users_devices)
     gh_http_client.assign_generated_device_user(number_for_assign=count_of_users_devices)
-    gh_http_client.create_feature(token)
+    # gh_http_client.create_feature(token)
 
 
 class SenderMsg(SequentialTaskSet):
