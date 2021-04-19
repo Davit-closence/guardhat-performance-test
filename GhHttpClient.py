@@ -1,10 +1,12 @@
-import time
-
 from RandomWordGenerator import RandomWord
 import requests
-import json
 import random
 import uuid
+import time
+from datetime import datetime
+import json
+
+from dateutil import tz
 
 
 class GhApi:
@@ -22,6 +24,9 @@ class GhApi:
 
     def generate_word(self, number):
         return RandomWord(max_word_size=number).generate()
+
+    def timestamp(self):
+        return datetime.now(tz.UTC).isoformat()
 
     def rnd_uuid(self):
         self.guid_list.append(uuid.uuid4())
@@ -179,3 +184,59 @@ class GhApi:
             print(f"Assign the device= {self.guid_list[count]} to user= {self.user_id_list[count]}")
 
     # endregion devices call
+
+    # region zones call
+    def create_zone(self, token, name, coordinates, zone_type, users, authorized_beacons):
+        url = f"{self.base_scc_url}/zones"
+        payload = self.build_zone_json(user=users,
+                                       zone_name=name,
+                                       coordinates=coordinates,
+                                       zone_type=zone_type,
+                                       authorized_beacons=authorized_beacons)
+        headers = {
+            "Authorization": f"{token}",
+            "Content-Type": "application/json"
+        }
+
+        response = requests.post(url=url, headers=headers, data=payload)
+        if response.ok:
+            print(f"Successfully create zone payload= {payload}")
+        else:
+            print(f"Failed to create zone payload= {payload}")
+        return response.text
+
+    def get_zone_type_by_name(self, token, zone_type_name):
+        url = f"{self.base_scc_url}/zones/zonetypes"
+        payload = {}
+        headers = {
+            "Authorization": f"{token}",
+            "Content-Type": "application/json"
+        }
+        response = requests.get(url=url, headers=headers, data=payload)
+
+        if response.ok:
+            print(f"Successfully getting zone by zone type= {zone_type_name}")
+        else:
+            print(f"Failed to getting zone by zone type= {zone_type_name}")
+
+        return response.json()
+
+    def build_zone_json(self, user, zone_name, coordinates, zone_type, authorized_beacons):
+        return json.dumps({
+            "activationTime": "2021-01-29T14:44:50+04:00",
+            "users": user,
+            "name": zone_name,
+            "comments": "Test Reason",
+            "extentGeoJson": "{\"type\":\"Polygon\",\"coordinates\":[[" + coordinates + "]]}",
+            "proximity": 1,
+            "created": self.timestamp(),
+            "type": zone_type,
+            "floor": {
+                "featureId": 1,
+                "featureType": {
+                    "name": "Site"
+                }
+            },
+            "authorizedBeacons": authorized_beacons
+        })
+    # endregion zones call
