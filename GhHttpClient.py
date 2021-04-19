@@ -118,7 +118,7 @@ class GhApi:
             print("Successfully getting features")
         else:
             print("Can not getting features")
-        return response.text
+        return response.json()
 
     # endregion features call
 
@@ -179,9 +179,3 @@ class GhApi:
             print(f"Assign the device= {self.guid_list[count]} to user= {self.user_id_list[count]}")
 
     # endregion devices call
-
-
-gh = GhApi()
-tk = gh.login_to_scc()
-f = gh.get_feature_by_name(tk)
-print(f)

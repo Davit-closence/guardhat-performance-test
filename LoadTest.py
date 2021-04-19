@@ -29,21 +29,19 @@ count_of_users_devices = 3
 
 @events.test_start.add_listener
 def on_test_start(**kwargs):
-    guid = "a0581ddb-ea05-4d45-9df3-6663806f4111"
     gh_http_client = GhHttpClient.GhApi()
     token = gh_http_client.login_to_scc()
-    # id_user = gh_http_client.create_user(token)
-    # gh_http_client.create_device(token)
-    # gh_http_client.assign_device_user(guid, id_user)
-    # gh_http_client.create_feature(token)
     gh_http_client.generate_user(token=token, user_count=count_of_users_devices)
     gh_http_client.generate_devices(token=token, guid_count=count_of_users_devices)
     gh_http_client.assign_generated_device_user(number_for_assign=count_of_users_devices)
-    # gh_http_client.create_feature(token)
+    if not gh_http_client.get_feature_by_name(token):
+        print("There is not feature. Creating feature")
+        gh_http_client.create_feature(token)
+    else:
+        print("There is a feature.")
 
 
 class SenderMsg(SequentialTaskSet):
-    guid = "a0581ddb-ea05-4d45-9df3-6663806f4111"
 
     @task
     def send_message(self):
