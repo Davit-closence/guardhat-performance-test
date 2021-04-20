@@ -219,15 +219,22 @@ class GhApi:
         else:
             print(f"Failed to getting zone by zone type= {zone_type_name}")
 
-        return response.json()
+        type_json = response.json()
+        found_value = next(dictionary for dictionary in type_json if dictionary["name"] == zone_type_name)
+        return found_value
 
     def build_zone_json(self, user, zone_name, coordinates, zone_type, authorized_beacons):
         return json.dumps({
-            "activationTime": "2021-01-29T14:44:50+04:00",
+            "activationTime": self.timestamp(),
             "users": user,
-            "name": zone_name,
+            "name": zone_name + self.timestamp(),
             "comments": "Test Reason",
-            "extentGeoJson": "{\"type\":\"Polygon\",\"coordinates\":[[" + coordinates + "]]}",
+            "extentGeoJson": json.dumps(
+                {
+                    "type": "Polygon",
+                    "coordinates": [coordinates]
+                }
+            ),
             "proximity": 1,
             "created": self.timestamp(),
             "type": zone_type,
