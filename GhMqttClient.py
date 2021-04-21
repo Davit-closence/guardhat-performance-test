@@ -139,7 +139,6 @@ class SendMsg:
         print(f"\nMessage Received at {datetime.now().strftime(date_format)} - {recd_message}")
 
     def send_raw_at(self, guid, user_id, x, y, z, ble=[]):
-        print(f"_______ {guid}")
         self.send(channel=f"guardhat/{guid}/inbound/raw",
                   message=self.message(guid=guid, user_id=user_id, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
 
