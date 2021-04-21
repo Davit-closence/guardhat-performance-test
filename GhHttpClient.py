@@ -29,7 +29,7 @@ class GhApi:
         return datetime.now(tz.UTC).isoformat()
 
     def rnd_uuid(self):
-        self.guid_list.append(uuid.uuid4())
+        self.guid_list.append(f"{uuid.uuid4()}")
 
     def login_to_scc(self):
         url = f"{self.scc_url}/oauth2/token"
