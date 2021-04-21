@@ -24,7 +24,7 @@ def time_delta(t1, t2):
     return int((t2 - t1) * 1000)
 
 
-count_of_users_devices = 10
+count_of_users_devices = 3
 
 coordinatesZoneInSite = [[-83.050040585037, 42.33595364286762],
                          [-83.04937561932185, 42.335065477679194],

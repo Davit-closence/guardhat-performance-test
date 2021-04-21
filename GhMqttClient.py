@@ -11,6 +11,7 @@ date_format = '%Y-%m-%d %H:%M:%S.%f'
 
 
 class SendMsg:
+    gh = GhHttpClient.GhApi()
     broker = "tcp://localhost:1883"
     port = 1883
     topic = "guardhat/+/outbound/#"
@@ -19,7 +20,7 @@ class SendMsg:
     password = 'xrJGwCDnj'
     # credentials
     seq_num = round(time.time() * 1000)
-    gh = GhHttpClient.GhApi()
+
     received_messages = []
 
     def __init__(self):
