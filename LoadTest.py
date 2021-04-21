@@ -65,6 +65,7 @@ class SenderMsg(SequentialTaskSet):
             GhMqttClient.SendMsg().generated_device_send_raw(number=count_of_users_devices, user_id=-1,
                                                              x=-83.049845649704,
                                                              y=42.335889840062066, z=1.0, ble=[])
+            GhMqttClient.SendMsg().receive_message(number=count_of_users_devices)
         except:
             events.request_failure.fire(
                 request_type="MQTT",

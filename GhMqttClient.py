@@ -33,12 +33,20 @@ class SendMsg:
         self.client.username_pw_set(username=self.username, password=self.password)
 
         self.client.connect("localhost", 1883, 60)
-        self.client.subscribe(topic=self.topic, qos=1)
+        # self.client.subscribe(topic=self.topic, qos=1)
         # self.client.on_message = self.on_message
         self.client.loop_start()
 
     def send(self, channel, message):
         self.client.publish(topic=channel, payload=message, qos=0, retain=False, properties=None)
+
+    def receive(self, channel):
+        self.client.subscribe(topic=channel, qos=1)
+
+    def receive_message(self, number):
+        for count in range(number):
+            self.receive(channel=f"guardhat/{self.gh.guid_list[count]}/outbound/#")
+            print(f"Subscribe the topic= guardhat/{self.gh.guid_list[count]}/outbound/#")
 
     def raw_event(self, user_id, x=-83.33097, y=42.561265, z=50.0, ble=[]):
         return self.message(user_id=user_id, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble)
