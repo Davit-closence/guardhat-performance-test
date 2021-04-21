@@ -49,6 +49,9 @@ def on_test_start(**kwargs):
                                  feature=gh_http_client.get_feature_by_name(token)[0])
     gh_http_client.generate_devices(token=token, guid_count=count_of_users_devices)
     gh_http_client.assign_generated_device_user(number_for_assign=count_of_users_devices)
+    gh_http_client.create_zone(token=token, name="Tst", coordinates=coordinatesZoneInSite,
+                               zone_type=gh_http_client.get_zone_type_by_name(token=token, zone_type_name="GEOFENCE"),
+                               users=[], authorized_beacons=[])
 
 
 class SenderMsg(SequentialTaskSet):
@@ -59,9 +62,9 @@ class SenderMsg(SequentialTaskSet):
         start_time = time.time()
 
         try:
-            # GhMqttClient.SendMsg().send_raw_at(self.guid, -1, 0.0, 0.0, 0.0, [])
-            GhMqttClient.SendMsg().generated_device_send_raw(number=count_of_users_devices, user_id=-1, x=0.0,
-                                                             y=0.0, z=0.0, ble=[])
+            GhMqttClient.SendMsg().generated_device_send_raw(number=count_of_users_devices, user_id=-1,
+                                                             x=-83.049845649704,
+                                                             y=42.335889840062066, z=1.0, ble=[])
         except:
             events.request_failure.fire(
                 request_type="MQTT",

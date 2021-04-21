@@ -33,7 +33,7 @@ class SendMsg:
 
         self.client.connect("localhost", 1883, 60)
         self.client.subscribe(topic=self.topic, qos=1)
-        self.client.on_message = self.on_message
+        # self.client.on_message = self.on_message
         self.client.loop_start()
 
     def send(self, channel, message):
