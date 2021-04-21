@@ -8,6 +8,7 @@ from dateutil import tz
 import GhHttpClient
 
 date_format = '%Y-%m-%d %H:%M:%S.%f'
+seq_num = round(time.time() * 1000)
 
 
 class SendMsg:
@@ -19,7 +20,6 @@ class SendMsg:
     username = 'guardhat'
     password = 'xrJGwCDnj'
     # credentials
-    seq_num = round(time.time() * 1000)
 
     received_messages = []
 
@@ -52,8 +52,9 @@ class SendMsg:
         return self.message(user_id=user_id, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble)
 
     def next_seq(self):
-        self.seq_num += 1
-        return self.seq_num
+        global seq_num
+        seq_num += 1
+        return seq_num
 
     def timestamp(self):
         return datetime.now(tz.UTC).isoformat()
