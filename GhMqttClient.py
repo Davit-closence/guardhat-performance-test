@@ -68,6 +68,7 @@ class SendMsg:
                 msg_code="",
                 activated=False,
                 event_type="RAW"):
+        print(f"Message contains Timestamp= {self.timestamp()} Sequence= {self.next_seq()} Guid= {guid}")
         return json.dumps(
             {
                 "header": {
