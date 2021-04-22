@@ -158,7 +158,12 @@ class SendMsg:
     def send_sos(self, guid, user_id, x, y, z, ble=[]):
         self.send(channel=f"guardhat/{guid}/inbound/notif",
                   message=self.message(guid=guid, user_id=user_id, event_type="EVENT", msg_code="EX000",
-                                       timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
+                                       activated=True, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
+
+    def generated_device_send_sos(self, number, user_id, x, y, z, ble=[]):
+        for count in range(number):
+            self.send_sos(guid=self.gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
+            self.log.log_info(f"Sending sos event Guid= {self.gh.guid_list[count]}")
 
     def generated_device_send_raw(self, number, user_id, x, y, z, ble=[]):
         for count in range(number):
