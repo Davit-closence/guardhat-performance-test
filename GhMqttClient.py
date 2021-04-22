@@ -6,12 +6,14 @@ import json
 from dateutil import tz
 
 import GhHttpClient
+import Log
 
 date_format = '%Y-%m-%d %H:%M:%S.%f'
 seq_num = round(time.time() * 1000)
 
 
 class SendMsg:
+    log = Log.Log()
     gh = GhHttpClient.GhApi()
     broker = "tcp://localhost:1883"
     port = 1883
@@ -46,7 +48,7 @@ class SendMsg:
     def receive_message(self, number):
         for count in range(number):
             self.receive(channel=f"guardhat/{self.gh.guid_list[count]}/outbound/#")
-            print(f"Subscribe the topic= guardhat/{self.gh.guid_list[count]}/outbound/#")
+            self.log.log_info(f"Subscribe the topic= guardhat/{self.gh.guid_list[count]}/outbound/#")
 
     def raw_event(self, user_id, x=-83.33097, y=42.561265, z=50.0, ble=[]):
         return self.message(user_id=user_id, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble)
@@ -68,7 +70,7 @@ class SendMsg:
                 msg_code="",
                 activated=False,
                 event_type="RAW"):
-        print(f"Message contains Timestamp= {self.timestamp()} Sequence= {self.next_seq()} Guid= {guid}")
+        self.log.log_info(f"Message contains Timestamp= {self.timestamp()} Sequence= {self.next_seq()} Guid= {guid}")
         return json.dumps(
             {
                 "header": {
@@ -147,13 +149,18 @@ class SendMsg:
     def on_message(self, client, userdata, message):
         self.received_messages.append(message)
         recd_message = str(message.payload.decode("utf-8"))
-        print(f"\nMessage Received at {datetime.now().strftime(date_format)} - {recd_message}")
+        self.log.log_info(f"\nMessage Received at {datetime.now().strftime(date_format)} - {recd_message}")
 
     def send_raw_at(self, guid, user_id, x, y, z, ble=[]):
         self.send(channel=f"guardhat/{guid}/inbound/raw",
                   message=self.message(guid=guid, user_id=user_id, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
 
+    def send_sos(self, guid, user_id, x, y, z, ble=[]):
+        self.send(channel=f"guardhat/{guid}/inbound/notif",
+                  message=self.message(guid=guid, user_id=user_id, event_type="EVENT", msg_code="EX000",
+                                       timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
+
     def generated_device_send_raw(self, number, user_id, x, y, z, ble=[]):
         for count in range(number):
             self.send_raw_at(guid=self.gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
-            print(f"Sending raw message Guid= {self.gh.guid_list[count]}")
+            self.log.log_info(f"Sending raw message Guid= {self.gh.guid_list[count]}")

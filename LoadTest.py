@@ -2,6 +2,7 @@ from locust import User, between, task, SequentialTaskSet, events
 import GhMqttClient
 import GhHttpClient
 import time
+import Log
 
 
 class LocustError(Exception):
@@ -36,13 +37,14 @@ coordinatesZoneInSite = [[-83.050040585037, 42.33595364286762],
 
 @events.test_start.add_listener
 def on_test_start(**kwargs):
+    log = Log.Log()
     gh_http_client = GhHttpClient.GhApi()
     token = gh_http_client.login_to_scc()
     if not gh_http_client.get_feature_by_name(token):
-        print("There is not feature. Creating feature")
+        log.log_info("There is not feature. Creating feature")
         gh_http_client.create_feature(token)
     else:
-        print("There is a feature.")
+        log.log_info("There is a feature.")
 
     between(1, 2)
     gh_http_client.generate_user(token=token, user_count=count_of_users_devices,
@@ -58,7 +60,8 @@ class SenderMsg(SequentialTaskSet):
 
     @task
     def send_message(self):
-        print("Mqtt start")
+        log = Log.Log()
+        log.log_info("Mqtt start")
         start_time = time.time()
 
         try:

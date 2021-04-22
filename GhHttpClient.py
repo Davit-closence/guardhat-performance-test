@@ -5,11 +5,13 @@ import uuid
 import time
 from datetime import datetime
 import json
+import Log
 
 from dateutil import tz
 
 
 class GhApi:
+    log = Log.Log()
     scc_url = "http://localhost"
     base_scc_url = "http://localhost/api-gw/kyra/1.0"
     grant_type = "password"
@@ -43,6 +45,7 @@ class GhApi:
         }
         response = requests.post(url, headers=headers, data=payload)
         access_token = "Bearer " + response.json()["access_token"]
+        self.log.log_info(f"Successfully login username - {self.username} password - {self.password}")
         return access_token
 
     # region users call
@@ -54,15 +57,15 @@ class GhApi:
         }
         response = requests.post(url, headers=headers, data=self.build_user_json(feature))
         if response.ok:
-            print("The user is created")
+            self.log.log_info("Successfully created users")
         else:
-            print("The user not is created")
+            self.log.log_info(f"Failed to created users response= {response.text}")
         return response.text
 
     def generate_user(self, token, user_count, feature):
         for x in range(user_count):
             self.user_id_list.append(self.create_user(token, feature))
-        print(f"Generated users with {user_count} count. User IDs= {self.user_id_list}")
+        self.log.log_info(f"Generated users with {user_count} count. User IDs= {self.user_id_list}")
 
     def build_user_json(self, feature):
         return json.dumps({
@@ -105,9 +108,9 @@ class GhApi:
 
         response = requests.post(url, headers=headers, data=payload, files=files)
         if response.ok:
-            print("The feature is created")
+            self.log.log_info(f"Feature is created")
         else:
-            print("The feature not is created")
+            self.log.log_info(f"Feature is not created response= {response.text}")
         return response.text
 
     def get_feature_by_name(self, token):
@@ -120,9 +123,9 @@ class GhApi:
         response = requests.get(url=url, headers=headers, data=payload)
 
         if response.ok:
-            print("Successfully getting features")
+            self.log.log_info(f"Successfully getting feature")
         else:
-            print("Can not getting features")
+            self.log.log_info(f"Can not getting features response= {response.text}")
         return response.json()
 
     # endregion features call
@@ -138,9 +141,9 @@ class GhApi:
                                  data=self.build_device_json(device_type="Communicator Hat", guid=guid))
 
         if response.ok:
-            print("The device is created")
+            self.log.log_info(f"Successfully creating device guid= {guid}")
         else:
-            print("The device not is created")
+            self.log.log_info(f"Failed to create device guid= {guid} response = {response.text}")
         return response.text
 
     def generate_devices(self, token, guid_count):
@@ -173,15 +176,15 @@ class GhApi:
         url = f"{self.scc_url}:8080/kyra-platform-app/rest/v1/device-users/devices/{guid}/users/{user_id}/permanent"
         response = requests.post(url)
         if response.ok:
-            print("The device  is assigned to user")
+            self.log.log_info("Successfully assigning device to user")
         else:
-            print("The device not is assigned to user")
+            self.log.log_info(f"Failed to assign device= {guid} to user= {user_id} response= {response.text}")
         return response.text
 
     def assign_generated_device_user(self, number_for_assign):
         for count in range(number_for_assign):
             self.assign_device_user(guid=self.guid_list[count], user_id=self.user_id_list[count])
-            print(f"Assign the device= {self.guid_list[count]} to user= {self.user_id_list[count]}")
+            self.log.log_info(f"Assign the device= {self.guid_list[count]} to user= {self.user_id_list[count]}")
 
     # endregion devices call
 
@@ -200,9 +203,9 @@ class GhApi:
 
         response = requests.post(url=url, headers=headers, data=payload)
         if response.ok:
-            print(f"Successfully create zone payload= {payload}")
+            self.log.log_info(f"Successfully create zone payload= {payload}")
         else:
-            print(f"Failed to create zone payload= {payload}")
+            self.log.log_info(f"Failed to create zone payload= {payload} response= {response.text}")
         return response.text
 
     def get_zone_type_by_name(self, token, zone_type_name):
@@ -215,10 +218,9 @@ class GhApi:
         response = requests.get(url=url, headers=headers, data=payload)
 
         if response.ok:
-            print(f"Successfully getting zone by zone type= {zone_type_name}")
+            self.log.log_info(f"Successfully getting zone by zone type= {zone_type_name}")
         else:
-            print(f"Failed to getting zone by zone type= {zone_type_name}")
-
+            self.log.log_info(f"Failed to getting zone by zone type= {zone_type_name} response= {response.text}")
         type_json = response.json()
         found_value = next(dictionary for dictionary in type_json if dictionary["name"] == zone_type_name)
         return found_value
