@@ -5,6 +5,7 @@ import GhMqttClient
 import GhHttpClient
 import time
 import Log
+from decimal import Decimal
 
 
 class LocustError(Exception):
@@ -36,6 +37,8 @@ coordinatesZoneInSite = [[-83.050040585037, 42.33595364286762],
                          [-83.050040585037, 42.33595364286762]
                          ]
 
+altitude_number = 0
+
 
 @events.test_start.add_listener
 def on_test_start(**kwargs):
@@ -66,16 +69,24 @@ class SenderMsg(SequentialTaskSet):
         log.log_info("Mqtt start")
         start_time = time.time()
 
+        def next_altitude_number():
+            global altitude_number
+            altitude_number += 0.000100
+            return "{:.4f}".format(altitude_number)
+
         try:
-            # GhMqttClient.SendMsg().generated_device_send_raw(number=count_of_users_devices, user_id=-1,
-            #                                                  x=-83.049845649704,
-            #                                                  y=42.335889840062066, z=1.0, ble=[])
-            GhMqttClient.SendMsg().generated_device_send_sos(number=count_of_users_devices, user_id=-1,
+            GhMqttClient.SendMsg().generated_device_send_raw(number=count_of_users_devices, user_id=-1,
                                                              x=random.uniform(-83.0497, -83.0494),
                                                              y=random.uniform(42.3358, 42.3359),
-                                                             z=random.uniform(1, 2),
-                                                             ble=[])
-            # GhMqttClient.SendMsg().receive_message(number=count_of_users_devices)
+                                                             z=next_altitude_number(), ble=[])
+
+            if next_altitude_number() == 0.0100:
+                print("Send Sos")
+                GhMqttClient.SendMsg().generated_device_send_sos(number=count_of_users_devices, user_id=-1,
+                                                                 x=random.uniform(-83.0497, -83.0494),
+                                                                 y=random.uniform(42.3358, 42.3359),
+                                                                 z=next_altitude_number(),
+                                                                 ble=[])
         except:
             events.request_failure.fire(
                 request_type="MQTT",
