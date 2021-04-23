@@ -75,14 +75,15 @@ class SenderMsg(SequentialTaskSet):
             return "{:.4f}".format(altitude_number)
 
         try:
-            GhMqttClient.SendMsg().generated_device_send_raw(number=count_of_users_devices, user_id=-1,
+            GhMqttClient.SendMsg().generated_device_send_raw(activated=True, number=count_of_users_devices, user_id=-1,
                                                              x=random.uniform(-83.0497, -83.0494),
                                                              y=random.uniform(42.3358, 42.3359),
                                                              z=next_altitude_number(), ble=[])
 
             if next_altitude_number() == 0.0100:
                 print("Send Sos")
-                GhMqttClient.SendMsg().generated_device_send_sos(number=count_of_users_devices, user_id=-1,
+                GhMqttClient.SendMsg().generated_device_send_sos(activated=True, number=count_of_users_devices,
+                                                                 user_id=-1,
                                                                  x=random.uniform(-83.0497, -83.0494),
                                                                  y=random.uniform(42.3358, 42.3359),
                                                                  z=next_altitude_number(),

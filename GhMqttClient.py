@@ -151,21 +151,25 @@ class SendMsg:
         recd_message = str(message.payload.decode("utf-8"))
         self.log.log_info(f"\nMessage Received at {datetime.now().strftime(date_format)} - {recd_message}")
 
-    def send_raw_at(self, guid, user_id, x, y, z, ble=[]):
+    def send_raw_at(self, activated, guid, user_id, x, y, z, ble=[]):
         self.send(channel=f"guardhat/{guid}/inbound/raw",
-                  message=self.message(guid=guid, user_id=user_id, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
+                  message=self.message(activated=activated, guid=guid, user_id=user_id, timestamp=self.timestamp(), x=x,
+                                       y=y, z=z, ble=ble))
 
-    def send_sos(self, guid, user_id, x, y, z, ble=[]):
+    def send_sos(self, activated, guid, user_id, x, y, z, ble=[]):
         self.send(channel=f"guardhat/{guid}/inbound/notif",
                   message=self.message(guid=guid, user_id=user_id, event_type="EVENT", msg_code="EX000",
-                                       activated=True, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
+                                       activated=activated, timestamp=self.timestamp(), x=x, y=y, z=z, ble=ble))
 
-    def generated_device_send_sos(self, number, user_id, x, y, z, ble=[]):
+    def generated_device_send_sos(self, activated, number, user_id, x, y, z, ble=[]):
         for count in range(number):
-            self.send_sos(guid=self.gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
-            self.log.log_info(f"Sending sos event Guid= {self.gh.guid_list[count]} x= {x},y= {y}, z= {z}")
+            self.send_sos(activated=activated, guid=self.gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
+            self.log.log_info(
+                f"Sending sos event Guid= {self.gh.guid_list[count]} activated= {activated} x= {x},y= {y}, z= {z}")
 
-    def generated_device_send_raw(self, number, user_id, x, y, z, ble=[]):
+    def generated_device_send_raw(self, activated, number, user_id, x, y, z, ble=[]):
         for count in range(number):
-            self.send_raw_at(guid=self.gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
-            self.log.log_info(f"Sending raw message Guid= {self.gh.guid_list[count]} x= {x},y= {y}, z= {z}")
+            self.send_raw_at(activated=activated, guid=self.gh.guid_list[count], user_id=user_id, x=x, y=y, z=z,
+                             ble=ble)
+            self.log.log_info(
+                f"Sending raw message Guid= {self.gh.guid_list[count]} activated= {activated} x= {x},y= {y}, z= {z}")
