@@ -1,3 +1,5 @@
+import random
+
 from locust import User, between, task, SequentialTaskSet, events
 import GhMqttClient
 import GhHttpClient
@@ -69,8 +71,10 @@ class SenderMsg(SequentialTaskSet):
             #                                                  x=-83.049845649704,
             #                                                  y=42.335889840062066, z=1.0, ble=[])
             GhMqttClient.SendMsg().generated_device_send_sos(number=count_of_users_devices, user_id=-1,
-                                                             x=-83.049845649704,
-                                                             y=42.335889840062066, z=1.0, ble=[])
+                                                             x=random.uniform(-83.0497, -83.0494),
+                                                             y=random.uniform(42.3358, 42.3359),
+                                                             z=random.uniform(1, 2),
+                                                             ble=[])
             # GhMqttClient.SendMsg().receive_message(number=count_of_users_devices)
         except:
             events.request_failure.fire(

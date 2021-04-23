@@ -163,9 +163,9 @@ class SendMsg:
     def generated_device_send_sos(self, number, user_id, x, y, z, ble=[]):
         for count in range(number):
             self.send_sos(guid=self.gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
-            self.log.log_info(f"Sending sos event Guid= {self.gh.guid_list[count]}")
+            self.log.log_info(f"Sending sos event Guid= {self.gh.guid_list[count]} x= {x},y= {y}, z= {z}")
 
     def generated_device_send_raw(self, number, user_id, x, y, z, ble=[]):
         for count in range(number):
             self.send_raw_at(guid=self.gh.guid_list[count], user_id=user_id, x=x, y=y, z=z, ble=ble)
-            self.log.log_info(f"Sending raw message Guid= {self.gh.guid_list[count]}")
+            self.log.log_info(f"Sending raw message Guid= {self.gh.guid_list[count]} x= {x},y= {y}, z= {z}")
