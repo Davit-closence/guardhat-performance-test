@@ -38,6 +38,7 @@ coordinatesZoneInSite = [[-83.050040585037, 42.33595364286762],
                          ]
 
 altitude_number = 0
+locust_number = 0
 
 
 @events.test_start.add_listener
@@ -74,14 +75,19 @@ class SenderMsg(SequentialTaskSet):
             altitude_number += 0.000100
             return "{:.4f}".format(altitude_number)
 
+        def next_locust_number():
+            global locust_number
+            locust_number += 1
+            return locust_number
+
         try:
             GhMqttClient.SendMsg().generated_device_send_raw(activated=True, number=count_of_users_devices, user_id=-1,
                                                              x=random.uniform(-83.0497, -83.0494),
                                                              y=random.uniform(42.3358, 42.3359),
                                                              z=next_altitude_number(), ble=[])
 
-            if next_altitude_number() == 0.0100:
-                print("Send Sos")
+            if next_locust_number() == 10:
+                log.log_info(f"Sending Sos event {next_locust_number() - 1}")
                 GhMqttClient.SendMsg().generated_device_send_sos(activated=True, number=count_of_users_devices,
                                                                  user_id=-1,
                                                                  x=random.uniform(-83.0497, -83.0494),
