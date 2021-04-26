@@ -93,20 +93,26 @@ class SenderMsg(SequentialTaskSet):
                                                              z=next_altitude_number(), ble=[])
 
             if sos_event_number % 100 == 0:
-                log.log_info(f"Sending Sos event {next_locust_number() - 1}")
                 GhMqttClient.SendMsg().generated_device_send_sos(activated=True, number=count_of_users_devices,
                                                                  user_id=-1,
                                                                  x=random.uniform(-83.0497, -83.0494),
                                                                  y=random.uniform(42.3358, 42.3359),
                                                                  z=next_altitude_number(),
                                                                  ble=[])
+                log.log_info("Sending Sos event activated=True")
 
                 sos_event_index = sos_event_number
 
-            print(f"sos_event_index {sos_event_index}")
-            print(f"sos_event_number {sos_event_number}")
-            if (sos_event_number - sos_event_index != 0) and (sos_event_number - sos_event_index == 15):
-                print("GFHJKLBKHJVHKGVHKG HKGV KHGV")
+            if (sos_event_number != 15) and (sos_event_number - sos_event_index != 0) and (
+                    sos_event_number - sos_event_index == 15):
+                GhMqttClient.SendMsg().generated_device_send_sos(activated=False, number=count_of_users_devices,
+                                                                 user_id=-1,
+                                                                 x=random.uniform(-83.0497, -83.0494),
+                                                                 y=random.uniform(42.3358, 42.3359),
+                                                                 z=next_altitude_number(),
+                                                                 ble=[])
+                log.log_info("Sending Sos event activated=False")
+
         except:
             events.request_failure.fire(
                 request_type="MQTT",
