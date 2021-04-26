@@ -39,6 +39,7 @@ coordinatesZoneInSite = [[-83.050040585037, 42.33595364286762],
 
 altitude_number = 0
 locust_number = 0
+sos_event_index = 0
 
 
 @events.test_start.add_listener
@@ -69,6 +70,7 @@ class SenderMsg(SequentialTaskSet):
         log = Log.Log()
         log.log_info("Mqtt start")
         start_time = time.time()
+        sos_event_number = 0
 
         def next_altitude_number():
             global altitude_number
@@ -86,7 +88,7 @@ class SenderMsg(SequentialTaskSet):
                                                              y=random.uniform(42.3358, 42.3359),
                                                              z=next_altitude_number(), ble=[])
 
-            if next_locust_number() == 10:
+            if next_locust_number() % 10 == 0:
                 log.log_info(f"Sending Sos event {next_locust_number() - 1}")
                 GhMqttClient.SendMsg().generated_device_send_sos(activated=True, number=count_of_users_devices,
                                                                  user_id=-1,
